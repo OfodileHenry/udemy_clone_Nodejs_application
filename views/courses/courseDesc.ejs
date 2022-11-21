@@ -1,0 +1,50 @@
+<% layout ("boilerplate") %>
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-offset-3">
+        <form class="" action="/payment" method="post">
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button">
+            <input type="hidden" name="courseId" value="<%= course._id %>">
+            data-key="pk_test_51GXVTqJjXtfq5B90D23BreFZ0HI2YvBIeApOjW1A6Ev9sWP8nz0nDGeD6txalfxvlasbAyXMaq9eHfACO1TrkMZi00Et2OZg51"
+            data-amount="<%= course.price %>"
+            data-name="Stripe.com"
+            data-description="Widget"
+            data-image=""
+            data-locale="auto"
+          </script>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <h2>Description</h2>
+         <%= course.desc %>
+      </div>
+
+      <div class="col-lg-5">
+          <h2>Enrolled Students</h2>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Students
+            </div>
+            <div class="panel-body">
+              <% if(course.ownsByStudents.length == 0){%>
+                <p>0</p>
+                <% } else { %>
+                  <% for(var i = 0; i < course.ownsByStudent.length; i++) { %>
+                    <div class="col-xs-2">
+                      <img src="course.ownsByStudent[i].user.profile.picture %>" alt="">
+                    </div>
+                  <% } %>
+              <% } %>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

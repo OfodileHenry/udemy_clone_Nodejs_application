@@ -1,0 +1,31 @@
+<% layout ("boilerplate") %>
+
+<!-- example_playlist_link.html -->
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<div class="wistia_embed wistia_async_30q7n48g4f playlistLinks=auto" style="height:360px;width:640px">&nbsp;</div>
+<a href="#wistia_30q7n48g4f">Make French Toast</a><br/>
+<a href="#wistia_342jss6yh5?time=30">Wistia Team Intro</a><br/>
+
+<script src="https://fast.wistia.com/embed/medias/s8vf8c3e74.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:75.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_s8vf8c3e74 videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/s8vf8c3e74/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
+
+
+<div class="container">
+<div id="wistia_<%= course.wistiaId %>" class="wistia_embed" style="width:1000px;height:625px;" data-video-width="1000" data-video-height="625">&nbsp;</div>
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/playlist-v1.js"></script>
+<script>
+wistiaPlaylist = Wistia.playlist("<%= course.wistiaId %>", {
+  version: "v1",
+  theme: "tab",
+  videoOptions: {
+    volumeControl: true,
+    autoPlay: true,
+    videoWidth: "1000",
+    videoHeight: "625"
+  },
+  media_0_0: {
+    autoPlay: false,
+    controlsVisibleOnLoad: false
+  }
+});
+</script>
+</div>
